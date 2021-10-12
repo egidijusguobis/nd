@@ -10,50 +10,50 @@ console.log('-------------------------------------');
 //2. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti 
 //skaičius 0 1 2 3 4 (vienas skaičius vienoje eilutėje);
 
-for (a = 0; a <=4; a++) {
-    console.log(a);
+for (i = 0; i <=4; i++) {
+    console.log(i);
 };
 console.log('-------------------------------------');
 
 //3. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti 
 //skaičius 0 10 20 30 40 (vienas skaičius vienoje eilutėje);
 
-for (b = 0; b <= 40; b += 10) {
-    console.log(b);
+for (i = 0; i <= 40; i += 10) {
+    console.log(i);
 };
 console.log('-------------------------------------');
 
 //4. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti 
 //skaičius 49 50 51 52 53 (vienas skaičius vienoje eilutėje);
 
-for (c = 49; c <= 53; c++) {
-    console.log(c);
+for (i = 49; i <= 53; i++) {
+    console.log(i);
 };
 console.log('-------------------------------------');
 
 //5. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti 
 //skaičius 4 3 2 1 0 (vienas skaičius vienoje eilutėje);
 
-for (d = 4; d >= 0; d--) {
-    console.log(d);
+for (i = 4; i >= 0; i--) {
+    console.log(i);
 };
 console.log('-------------------------------------');
 
 //6. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti 
 //skaičius 0 2 4 6 8 (vienas skaičius vienoje eilutėje, daugybos konsolėje nenaudoti!, if’ų nenaudoti, ciklas for);
 
-for(let e = 0; e <= 8; e+=2) {
-    console.log(e);
+for(let i = 0; i <= 8; i+=2) {
+    console.log(i);
 };
 console.log('-------------------------------------');
 
 //7. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti 
 //skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje);
 
-let g = 0;
+let g
 
-for (f = 0; f < 5; f++) {
-    g = Math.random() * 10;
+for (i = 0; i < 5; i++) {
+    g = Math.trunc(Math.random() * 11);
     console.log(g);
 };
 console.log('-------------------------------------');
@@ -61,10 +61,10 @@ console.log('-------------------------------------');
 //8. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius 
 //nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Paskutinis atspausdintas skaičius turi būti 5;
 
-let h = 0;
+let h;
 
 while (h !== 5) {
-    h = Math.trunc(Math.random() * 10);
+    h = Math.trunc(Math.random() * 11);
     console.log(h);
 };
 console.log('-------------------------------------');
@@ -73,22 +73,22 @@ console.log('-------------------------------------');
 //nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, 
 //kai atsitiktinių skaičių suma viršija 100;
 
-for (k = 0; k <= 100; k += l) {
-    l = Math.random() * 10;
-    console.log(l);
+for (i = 0; i <= 100; i += k) {
+    k = Math.trunc(Math.random() * 11);
+    console.log(k);
 }
-console.log(k);
+console.log(i);
 console.log('-------------------------------------');
 
 //10. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius 
 //nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Paskutinis atspausdintas skaičius 
 //turi būti 5 arba 7; Suskaičiuoti kiek ciklų prasisuko;
 
-let m = 0;
+let m;
 let n = 0;
 
 while (m !== 5 && m != 7) {
-    m = Math.trunc(Math.random() * 10);
+    m = Math.trunc(Math.random() * 11);
     console.log(m);
     n++;
 }
@@ -103,21 +103,21 @@ let o = 0;
 let p = 0;
 
 while (o < 11 || p < 20) {
-    p += Math.random() * 10;
+    p += Math.trunc(Math.random() * 11);
     o++;
 }
-console.log(p);
 console.log(o);
+console.log(p);
 console.log('-------------------------------------');
 
 //12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 
 //0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
 
-let r = 0;
+let r;
 let s = 0;
 
 while (s < 3) {
-    r = Math.trunc(Math.random() * 10);
+     r = Math.trunc(Math.random() * 11);
     console.log(r);
     if(r % 2 != 0){
         s++;
@@ -129,10 +129,10 @@ console.log('-------------------------------------');
 //nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
 
 do {
-    t = Math.trunc(Math.random() * 10);
-    u = Math.trunc(Math.random() * 10);
-    console.log(t, u);
-} while (t != u);
+    i = Math.trunc(Math.random() * 11);
+    j = Math.trunc(Math.random() * 11);
+    console.log(i, j);
+} while (i != j);
 
 console.log('-------------------------------------');
 
@@ -142,8 +142,8 @@ console.log('-------------------------------------');
 let v = 0;
 let x = 0;
 while(v < 100 || x < 100) {
-    v += Math.random() * 10;
-    x += Math.random() * 10;
+    v += Math.trunc(Math.random() * 11);
+    x += Math.trunc(Math.random() * 11);
     console.log(v, x);
 }
 
@@ -155,18 +155,18 @@ console.log('-------------------------------------');
 
 let y;
 let z;
-let aa = 0;
-let ab = 0;
+let a = 0;
+let b = 0;
 
-while (aa < 3 || ab < 3) {
-    y = Math.trunc(Math.random() * 10);
-    z = Math.trunc(Math.random() * 10);
+while (a < 3 || b < 3) {
+    y = Math.trunc(Math.random() * 11);
+    z = Math.trunc(Math.random() * 11);
     console.log(y, z);
     if(y % 2 != 0) {
-        aa++;
+        a++;
     }
     if(z % 2 != 0) {
-        ab++
+        b++
     }
 }
 
