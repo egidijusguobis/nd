@@ -3,8 +3,8 @@
 
 const a = []
 a.length = Math.trunc(Math.random() * 31);
-for (let b = 0; b < a.length; b++) {
-    a[b] = Math.trunc(Math.random() * 11);
+for (let i = 0; i < a.length; i++) {
+    a[i] = Math.trunc(Math.random() * 11);
 }
 console.log(a);
 console.log('-----------------------');
@@ -152,6 +152,36 @@ for(i = 0; i < pinigine[2].length; i++) {
 }
 console.log('MasterCard =', master, 'Visa =', visa);
 console.log('-----------------------');
+
+//14. Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos 
+// bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 
+// iki 9999999999;
+
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+let bilietai = [];
+
+for (let i = 0; i < bilietai.length || bilietai.length < 10; i++) {
+    bilietai[i] = rand(1000000000, 9999999999);
+}
+pinigine.push(bilietai)
+console.log(pinigine);
+console.log('-----------------------');
+
+//15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
+
+pinigine[3].sort()
+
+console.log(pinigine[3]);
+console.log('-----------------------');
+
+//16. Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom 
+// ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, 
+// kol įdėta suma bus lygi 500);
+
 
 
 
