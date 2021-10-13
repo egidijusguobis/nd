@@ -2,50 +2,156 @@
 //nuo 10 iki 30, o reikšmės atsitiktiniai skaičiai nuo 0 iki 10 (pinigai);
 
 const a = []
-a.length = Math.trunc(Math.random() * 30);
+a.length = Math.trunc(Math.random() * 31);
 for (let b = 0; b < a.length; b++) {
-    a[b] = Math.trunc(Math.random() * 10);
+    a[b] = Math.trunc(Math.random() * 11);
 }
 console.log(a);
+console.log('-----------------------');
 
 //2.Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio reikšmių 
 //(pinigų esančių piniginėje) sumą;
 
-let suma = 0;
+// let suma = 0;
 
-for (let b = 0; b < a.length; b++) {
-    suma += a[b]
-}
+// for (let b = 0; b < a.length; b++) {
+//     suma += a[b]
+// }
 
-console.log(suma);
+// console.log(suma);
+// console.log('-----------------------');
 
 //3. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių 
 //pinigų (skaičių didesnių už 2 ) reikšmių sumą;
 
-let suma2 = 0;
+// let suma2 = 0;
 
-for (let b = 0; b < a.length; b++) {
-    if (a[b] > 2) {
-        suma2 += a[b]
-    }
-}
+// for (let b = 0; b < a.length; b++) {
+//     if (a[b] > 2) {
+//         suma2 += a[b]
+//     }
+// }
 
-console.log(suma2);
+// console.log(suma2);
+// console.log('-----------------------');
 
 //4. Išleisti visus metalinius pinigus 
 //(reikšmes, kurios yra mažesnės arba lygios 2 padaryti lygias 0) iš 1 uždavinio;
 
-for (let b = 0; b < a.length; b++) {
-    if (a[b] <= 2) {
-        a[b] = 0
-    }
-}
-console.log(a);
+// for (let b = 0; b < a.length; b++) {
+//     if (a[b] <= 2) {
+//         a[b] = 0
+//     }
+// }
+// console.log(a)
+// console.log('-----------------------');
 
 //5. Surasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti 
 //kiek tokių didžiausių reikšmių masyve yra;
 
-for (let b = 0; b < a.length; b++) {
-    
+// for(i = 0; i < a.length; i++) {
+//     let max = a[0]
+//     if (a[i] > max) {
+//         max = a[i]
+//     }
+// }
+
+//6. Visus masyvo elementus, kurie yra lygūs 0, pakeisti į tų elementų 
+//indeksų (vietų, numerių) reikšmes;
+
+// for(let i = 0; i < a.length; i++) {
+//     if (a[i] = 0) {
+//         a[i] = 
+//     };
+//     console.log(a);
+// }
+// console.log('-----------------------');
+
+//7. Į 1 uždavinio masyvą pridėti tiek naujų reikšmių 
+// (pinigų, atsitiktinių skaičių nuo 0 iki 10), kad masyvo 
+// ilgis būtų lygiai 30;
+
+// while(a.length !== 30) {
+//     let i = Math.trunc(Math.random() * 11)
+//     a.push(i);
+// }
+// console.log(a);
+
+//8. Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus 
+// masyvus. Į vieną iš 1 uždavinio masyvo pridėti reikšmes mažesnes arba 
+// lygias 2 (monetas), o į kitą didesnes nei 2 (popierinius pinigus);
+
+let monetos = [];
+let popieriniai = [];
+
+for(let i = 0; i < a.length; i++) { 
+    if (a[i] <= 2) {
+        monetos.push(a[i])
+    } else {
+        popieriniai.push(a[i])
+    }
 }
+console.log(monetos, popieriniai);
+console.log('-----------------------');
+
+//9. Sukurti masyvą (piniginę su dviem skyreliais) iš dviejų elementų, 
+// kurio pirmas elementas būtų masyvas iš 8 uždavinio su monetom, o 
+// antras elementas masyvas iš 8 uždavinio su popieriniais pinigais;
+
+let pinigine = [];
+
+pinigine.push(monetos, popieriniai);
+
+
+console.log(pinigine);
+console.log('-----------------------');
+
+//10. Į 9 uždavinio masyvą, piniginę su dviem skyreliais, pridėti trečią 
+// skyrelį- masyvą su kortelėm: ['KIKA', 'Euro Vaistinė', 
+// 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI']
+
+let korteles = ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+
+pinigine.push(korteles);
+
+console.log(pinigine);
+console.log('-----------------------');
+
+//11. Korteles skyrelyje sudėlioti (išrūšiuoti) pagal abėcėlę;
+
+pinigine[2].sort()
+
+console.log(pinigine);
+console.log('-----------------------');
+
+//12. Į kortelių skyrelį pridėti mokėjimo kortelių 'MasterCard', 'Visa' 
+// (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' 
+// ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis 
+// (masyvo ilgis) pasidarytų lygus 20;
+
+while(pinigine[2].length < 20) {
+    if(Math.random() < 0.5) {
+        pinigine[2].push('MasterCard')
+    } else {
+        pinigine[2].push('Visa')
+    };
+}
+console.log(pinigine);
+console.log('-----------------------');
+
+//13. Paskaičiuokite, kokio tipo kortelių 
+// ('MasterCard' arba 'Visa') yra daugiau;
+let master = 0;
+let visa = 0;
+for(i = 0; i < pinigine[2].length; i++) {
+    if(pinigine[2][i] === 'MasterCard') {
+        master++
+    } else if(pinigine[2][i] === 'Visa') {
+        visa++;
+    }   
+}
+console.log('MasterCard =', master, 'Visa =', visa);
+console.log('-----------------------');
+
+
 
