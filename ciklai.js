@@ -162,10 +162,10 @@ while (a < 3 || b < 3) {
     y = Math.trunc(Math.random() * 11);
     z = Math.trunc(Math.random() * 11);
     console.log(y, z);
-    if(y % 2 != 0) {
+    if(y % 2 == 1) {
         a++;
     }
-    if(z % 2 != 0) {
+    if(z % 2 == 1) {
         b++
     }
 }
