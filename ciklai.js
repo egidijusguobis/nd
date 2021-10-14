@@ -73,11 +73,15 @@ console.log('-------------------------------------');
 //nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, 
 //kai atsitiktinių skaičių suma viršija 100;
 
-for (i = 0; i <= 100; i += k) {
+cikloSum = 0;
+let k;
+
+while (cikloSum < 100) {
     k = Math.trunc(Math.random() * 11);
+    cikloSum += k
     console.log(k);
 }
-console.log(i);
+console.log(cikloSum);
 console.log('-------------------------------------');
 
 //10. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius 

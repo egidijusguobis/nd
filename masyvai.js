@@ -1,11 +1,13 @@
 //1. Sukurti masyvą (piniginę), kurio ilgis yra atsitiktinis 
 //nuo 10 iki 30, o reikšmės atsitiktiniai skaičiai nuo 0 iki 10 (pinigai);
 
-const a = []
-a.length = Math.trunc(Math.random() * 31);
-for (let i = 0; i < a.length; i++) {
-    a[i] = Math.trunc(Math.random() * 11);
-}
+let a = [];
+let ilgis = rand(10, 30);
+
+for (i = 0; i < ilgis; i++) {
+    a.push(rand(0, 10))
+} 
+
 console.log(a);
 console.log('-----------------------');
 
@@ -82,9 +84,8 @@ console.log('-----------------------');
 // ilgis būtų lygiai 30;
 
 // while(a.length !== 30) {
-//     let i = Math.trunc(Math.random() * 11)
-//     a.push(i);
-// }
+//     a.push(i) = Math.trunc(Math.random() * 11)
+//  }
 // console.log(a);
 // console.log('-----------------------');
 
@@ -139,7 +140,7 @@ console.log('-----------------------');
 // ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis 
 // (masyvo ilgis) pasidarytų lygus 20;
 
-// while(pinigine[2].length < 20) {
+// while(pinigine[2].length <= 20) {
 //     if(Math.random() < 0.5) {
 //         pinigine[2].push('MasterCard')
 //     } else {
@@ -168,11 +169,11 @@ console.log('-----------------------');
 // bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 
 // iki 9999999999;
 
-// function rand(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 // let bilietai = [];
 
 // for (let i = 0; i < bilietai.length || bilietai.length < 10; i++) {
@@ -194,19 +195,16 @@ console.log('-----------------------');
 // kol įdėta suma bus lygi arba daugiau 500);
 
 // let popieriusSum = 0;
-// let popieriusVnt = 0;
 // let popierius;
 
-// while(popieriusSum <= 500 || popieriusVnt == 500) {
-//     let popierius = rand(3, 10)
+// while(popieriusSum <= 500) {
+//     popierius = rand(3, 10)
 //     pinigine[1].push(popierius)
 //     popieriusSum += popierius
-//     popieriusVnt++;
 // }
 
 // console.log(pinigine);
 // console.log(popieriusSum);
-// console.log('Kupiuru buvo atspausdinta:', popieriusVnt);
 // console.log('-----------------------');
 
 //17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris 
