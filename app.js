@@ -66,14 +66,14 @@ i.addEventListener('click', () => {
 });
 //  c.Padaryti, kad paspaudus ant tago su klase prices, backgroundas pasikeistų į pilką, o paspaudus dar kartą vėl grįžtu į baltą spalvą;
 let bg = document.querySelector('.prices')
+
 bg.addEventListener('click', () => {
-bg.style.background = "grey"
-});
-if(bg.style.background == "grey") {
-    bg.addEventListener('click', () => {
-    bg.style.background = "white"
+    if (bg.style.background === "grey") {
+        bg.style.background = "white"
+    } else {
+        bg.style.background = "grey"
+    }
 })
-}
 
 //  d.Padaryti, kad paspaudus ant tago su id contacts, tam tagui būtų pridėta css savybė color = orange;
 let contacts = document.querySelector('#contacts');
@@ -87,12 +87,10 @@ size.addEventListener('click', () => {
 })
 //  f.Padaryti taip, kad paspaudus ant X, esančio tage su id contacts, pridėtos tage su id contacts savybės būtų panaikintos https://stackoverflow.com/questions/18691655/remove-style-on-element
 let trinti = document.querySelector('#contacts > b');
-trinti.addEventListener('click', () => {
-    if (contacts.style.color = 'orange') {
-        contacts.style.color = null
-    }
-
+trinti.addEventListener('click', (e) => {
+    contacts.style.color = null
     contacts.style.fontSize = null;
+    e.stopPropagation()
 });
 //  d.Padaryti tai ką liepia mygtukai Header2 sekcijoje;
 
@@ -104,4 +102,39 @@ let clickBack2 = document.getElementById('h1-font-back')
 clickBack2.addEventListener('click', () => {
     document.querySelector('h1').style.fontSize = null
 });
+
+//4.Elementų grupių events
+//  a.Padaryti, kad dukartus paspaudus ant naujų gyvūnų jie nusispalvintu raudonai https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event
+let doubleClick = document.querySelectorAll('.new')
+
+doubleClick.forEach((e) => {
+    e.addEventListener('dblclick', () => {
+    e.style.color = "red"
+    })
+})
+//  b.Padaryti, kad paspaudus ant gyvūno jis būtų atvaizduojamas 130% didesniu fonto dydžiu. “PATINKA” tas neturi galioti.
+let didinam = document.querySelectorAll('.animals > ul > li:not(li:first-of-type)')
+
+didinam.forEach((e) => {
+    e.addEventListener('click', () => {
+        e.style.fontSize = "130%"
+    })
+})
+//  c.Padaryti, kad paspaudus ant “PATINKA”, atitinkamai sekcijai būtų priskirta klasė like;
+
+let patinka = document.querySelectorAll('.animals > ul')
+patinka.forEach(e => {
+    e.querySelector('.like-button').addEventListener('click', () => {
+        e.classList.add('like');
+    })
+});
+
+//5.Dinaminis elementų kūrimas (su createElement)
+//  a.Dinamiškai su JS pridėti naują kainą “Senjorai tik: 1.99 eur”;
+//  b.Dinamiškai su JS Pridėti naują kainą “Senjorų grupė iki 10: tik 5.99 eur” Padaryti, kad pridėtas elementas turėtų klasę new ir ant jo paklikinus jis pasidarytų žalias;
+//  c.Dinamiškai su JS kiekvienoje gyvūnų kategorijoje po “PATINKA” pridėkite dar vieną li elementą “NEPATINKA”, kurį paspaudus atitinkamoje sekcijoje būtų nuimta klasė like
+//  d.Dinamiškai su JS sukurkite naują mygtukų grupę HEADER 3 naudojant analogišką html tagų struktūrą kaip ir HEADER 1 ir HEADER 2. Pirmas mygtukas vadintųsi, “Pabraukti H1 tagą”, o antras “Nepabraukti H1 tagą”. Mygtukai turi daryti tai kas ant jų parašyta
+
+
+
 
