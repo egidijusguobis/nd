@@ -131,10 +131,55 @@ patinka.forEach(e => {
 
 //5.Dinaminis elementų kūrimas (su createElement)
 //  a.Dinamiškai su JS pridėti naują kainą “Senjorai tik: 1.99 eur”;
-//  b.Dinamiškai su JS Pridėti naują kainą “Senjorų grupė iki 10: tik 5.99 eur” Padaryti, kad pridėtas elementas turėtų klasę new ir ant jo paklikinus jis pasidarytų žalias;
-//  c.Dinamiškai su JS kiekvienoje gyvūnų kategorijoje po “PATINKA” pridėkite dar vieną li elementą “NEPATINKA”, kurį paspaudus atitinkamoje sekcijoje būtų nuimta klasė like
-//  d.Dinamiškai su JS sukurkite naują mygtukų grupę HEADER 3 naudojant analogišką html tagų struktūrą kaip ir HEADER 1 ir HEADER 2. Pirmas mygtukas vadintųsi, “Pabraukti H1 tagą”, o antras “Nepabraukti H1 tagą”. Mygtukai turi daryti tai kas ant jų parašyta
+let senjorai = document.getElementsByClassName('prices')[0];
+let kaina = document.createElement('h2')
+kaina.innerText = "Senjorai tik: 1.99 eur"
+senjorai.append(kaina)
 
+//  b.Dinamiškai su JS Pridėti naują kainą “Senjorų grupė iki 10: tik 5.99 eur” Padaryti, kad pridėtas elementas turėtų klasę new ir ant jo paklikinus jis pasidarytų žalias;
+let kaina2 = document.createElement('h2');
+kaina2.innerText = "Senjorų grupė iki 10: tik 5.99 eur";
+senjorai.append(kaina2);
+kaina2.classList.add('new');
+kaina2.addEventListener ('click', () => {
+    kaina2.style.color = "green"
+})
+
+//  c.Dinamiškai su JS kiekvienoje gyvūnų kategorijoje po “PATINKA” pridėkite dar vieną li elementą “NEPATINKA”, kurį paspaudus atitinkamoje sekcijoje būtų nuimta klasė like
+
+let gyvunai = document.querySelectorAll('ul');
+gyvunai.forEach(e => {
+    let patinka = e.querySelector('.like-button');
+    let nepatinka = document.createElement('li');
+    nepatinka.innerText = "NEPATINKA"
+    patinka.after(nepatinka)
+    nepatinka.addEventListener('click', () => {
+        e.classList.remove('like')
+    })
+
+})
+//  d.Dinamiškai su JS sukurkite naują mygtukų grupę HEADER 3 naudojant analogišką html tagų struktūrą kaip ir HEADER 1 ir HEADER 2. Pirmas mygtukas vadintųsi, “Pabraukti H1 tagą”, o antras “Nepabraukti H1 tagą”. Mygtukai turi daryti tai kas ant jų parašyta
+let fieldset = document.createElement('fieldset');
+let legend = document.createElement('legend');
+legend.innerText = "HEADER 3"
+let button = document.createElement('button');
+button.innerText = "Pabraukti H1 tagą"
+let button2 = document.createElement('button');
+button2.innerText = "Nepabraukti H1 tagą"
+
+fieldset.append(legend);
+fieldset.append(button);
+fieldset.append(button2);
+
+document.getElementById('contacts').before(fieldset);
+
+button.addEventListener('click', () => {
+    document.querySelector('h1').style.textDecoration = "underline"
+})
+
+button2.addEventListener('click', () => {
+    document.querySelector('h1').style.textDecoration = "none"
+})
 
 
 
